@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.concurrent.TimeUnit;
 
 public class FormPage {
@@ -16,7 +15,7 @@ public class FormPage {
     private WebElement lastNameValue;
     @FindBy(xpath = "//input[@id='userEmail']")
     private WebElement userEmailValue;
-    @FindBy(xpath = "//*[@id='gender-radio-2']")
+    @FindBy(xpath = "//*[@id='genterWrapper']/div[2]/div[1]/label")
     private WebElement radioBtn;
     @FindBy(xpath = "//input[@id='userNumber']")
     private WebElement userNumberValue;

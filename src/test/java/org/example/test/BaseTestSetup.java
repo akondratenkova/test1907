@@ -2,23 +2,27 @@ package org.example.test;
 import org.example.page.FormPage;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-abstract public class BaseTestSetup {
+import static org.example.test.Constants.URL;
+
+public class BaseTestSetup {
     public static FormPage formPage;
     static WebDriver driver = new ChromeDriver();
 
-    @Before
-    public void setup() {
-
-        driver.manage().window().maximize();
-        driver.get("https://demoqa.com/automation-practice-form");
-
+    public static void setup(){
         formPage = new FormPage(driver);
+        driver.get(URL);
+        driver.manage().window().maximize();
     }
 
-
+    @Before
+    public void init() {
+        setup();
+    }
 
     @After
     public void tearDown() {
